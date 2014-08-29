@@ -1,4 +1,3 @@
 dotfiles
 ========
-
-Jeremy's dotfiles
+zddhub's dotfiles

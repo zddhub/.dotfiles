@@ -1,13 +1,16 @@
 [color]
 	ui = true
+	diff = auto
+	status = auto
+	branch = auto
 [core]
-	editor = vim -c 'startinsert'
+	editor = vim
 	excludesfile = ~/.gitignore_global
 [user]
-	email = jeremy.saenz@gmail.com
-	name = Jeremy Saenz
+	email = zddhub@gmail.com
+	name = zdd
 [github]
-	user = codegangsta
+	user = zddhub
 [alias]
   co = checkout
   c = commit -v
