@@ -9,27 +9,27 @@ cd ~ && git clone https://github.com/zddhub/.dotfiles.git && cd .dotfiles && ./b
 
 ## Key bindings
 
-`<leader> = '\'`
+* `<leader> = '\'`
 
 ### Split
 
-`\-` - split horizontally
-`\|` - split vertically
-`<Ctrl-J>` - `<Ctrl-W><Ctrl-J>`
-`<Ctrl-K>` - `<Ctrl-W><Ctrl-K>`
-`<Ctrl-L>` - `<Ctrl-W><Ctrl-L>`
-`<Ctrl-H>` - `<Ctrl-W><Ctrl-H>`
+* `\-` - split horizontally
+* `\|` - split vertically
+* `<Ctrl-J>` - `<Ctrl-W><Ctrl-J>`
+* `<Ctrl-K>` - `<Ctrl-W><Ctrl-K>`
+* `<Ctrl-L>` - `<Ctrl-W><Ctrl-L>`
+* `<Ctrl-H>` - `<Ctrl-W><Ctrl-H>`
 
 ### NERDTree
-`\n` - Open NERDTree
+* `\n` - Open NERDTree
 
 ## Go
-`<Ctrl-I>` - auto complete
-`<leader>y` - code format
-`<leader>f` - import 'fmt'
+* `<Ctrl-I>` - auto complete
+* `<leader>y` - code format
+* `<leader>f` - import 'fmt'
 
 # zencoding
-`<Ctrl-E>` - auto complete html
+* `<Ctrl-E>` - auto complete html
 
 ## Thanks
 * [Jeremy Saenz](http://codegangsta.io) and his [dotfiles repository](https://github.com/codegangsta/dotfiles)
