@@ -114,7 +114,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Zencoding
-let g:user_zen_expandabbr_key='<C-e>'
+let g:user_zen_expandabbr_key='<C-R>'
 let g:user_zen_settings = { 'erb': { 'extends': 'html' } }
 
 " disable arrow keys
