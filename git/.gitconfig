@@ -24,3 +24,5 @@
   i = "issue"
   ic = "issue create"
   cis = "ci-status"
+[push]
+	default = simple
