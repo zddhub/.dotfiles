@@ -29,7 +29,7 @@ cd ~ && git clone https://github.com/zddhub/.dotfiles.git && cd .dotfiles && ./b
 * `<leader>f` - import 'fmt'
 
 # zencoding
-* `<Ctrl-E>` - auto complete html
+* `<Ctrl-R>` - auto complete html
 
 ## Thanks
 * [Jeremy Saenz](http://codegangsta.io) and his [dotfiles repository](https://github.com/codegangsta/dotfiles)
