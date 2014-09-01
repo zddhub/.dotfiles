@@ -37,6 +37,8 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
+set sw=4
+
 " Setting shell for vim
 set shell=sh
 
@@ -80,19 +82,33 @@ if executable('ag')
 endif
 
 " Color Scheme
-set t_Co=256
-color Tomorrow-Night
+if &term =~ "xterm"
+    set t_Co=256
+    color Tomorrow-Night
+else
+    color Tomorrow-Night-Bright  " set fsecure term = xterm-color, avoid blink screen, when use fsecure
+endif
 hi Search term=reverse cterm=reverse gui=reverse ctermfg=237
 
 " Map cursor for insert mode
-let &t_SI .= "\<Esc>[5 q"
-" solid block
-let &t_EI .= "\<Esc>[2 q"
-" 1 or 0 -> blinking block
-" 3 -> blinking underscore
-" Recent versions of xterm (282 or above) also support
-" 5 -> blinking vertical bar
-" 6 -> solid vertical bar
+if has('mac') || has('unix')
+    let &t_SI .= "\<Esc>[5 q"
+    " solid block
+    let &t_EI .= "\<Esc>[2 q"
+    " 1 or 0 -> blinking block
+    " 3 -> blinking underscore
+    " Recent versions of xterm (282 or above) also support
+    " 5 -> blinking vertical bar
+    " 6 -> solid vertical bar
+else
+    " ubuntu
+    if has("autocmd")
+        au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+        au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+        au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+        au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+    endif
+endif
 
 " Splitting
 map <Leader>- :split<CR>
