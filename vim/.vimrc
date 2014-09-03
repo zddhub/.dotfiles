@@ -91,22 +91,26 @@ endif
 hi Search term=reverse cterm=reverse gui=reverse ctermfg=237
 
 " Map cursor for insert mode
-if has('mac') || has('unix')
-    let &t_SI .= "\<Esc>[5 q"
-    " solid block
-    let &t_EI .= "\<Esc>[2 q"
-    " 1 or 0 -> blinking block
-    " 3 -> blinking underscore
-    " Recent versions of xterm (282 or above) also support
-    " 5 -> blinking vertical bar
-    " 6 -> solid vertical bar
-else
-    " ubuntu
-    if has("autocmd")
-        au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-        au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-        au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-        au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+if has('unix')
+    let os = system('uname')
+    if os =~ 'Darwin'
+        " mac
+        let &t_SI .= "\<Esc>[5 q"
+        " solid block
+        let &t_EI .= "\<Esc>[2 q"
+        " 1 or 0 -> blinking block
+        " 3 -> blinking underscore
+        " Recent versions of xterm (282 or above) also support
+        " 5 -> blinking vertical bar
+        " 6 -> solid vertical bar
+    elseif os =~ 'Linux'
+        " ubuntu
+        if has("autocmd")
+            au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+            au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+            au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+            au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+        endif
     endif
 endif
 
