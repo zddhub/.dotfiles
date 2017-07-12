@@ -7,17 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-
-# default ruby
-chruby 2.0
-
 # Z
 source "$HOME/.dotfiles/z/z.sh"
-
-# gh
-eval "$(gh alias -s)"
 
 # Global aliases
 alias ctags="`brew --prefix`/bin/ctags"
